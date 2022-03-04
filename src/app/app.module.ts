@@ -19,6 +19,7 @@ import { LocationComponent } from './location/location.component';
 import { InformationComponent } from './information/information.component';
 import {HttpClientModule} from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
+import { ShopComponent } from './shop/shop.component';
 
 
 
@@ -34,7 +35,8 @@ import { FormsModule } from '@angular/forms';
      GalleryComponent,
      InvoiceComponent,
      LocationComponent,
-     InformationComponent
+     InformationComponent,
+     ShopComponent
   ],
   imports: [
     BrowserModule,

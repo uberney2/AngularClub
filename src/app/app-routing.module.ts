@@ -5,6 +5,7 @@ import { HomeComponent } from './home/home.component';
 import { InformationComponent } from './information/information.component';
 import { InvoiceComponent } from './invoice/invoice.component';
 import { LocationComponent } from './location/location.component';
+import { ShopComponent } from './shop/shop.component';
 import { UsersComponent } from './users/users.component';
 
 const routes: Routes = [
@@ -37,13 +38,17 @@ const routes: Routes = [
     component: InformationComponent
   },
   {
+    path: 'shop',
+    component: ShopComponent
+  },
+  {
     path: '**',
     redirectTo: 'home'
   }
-   
-  
+
+
    ]
- 
+
 
  }
 ];

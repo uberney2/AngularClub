@@ -1,0 +1,79 @@
+<body>
+  <div class="container-flex">
+    <div class="row">
+      <div class="col">
+        <h1>Shopping</h1>
+      </div>
+    </div>
+  </div>
+  <br>
+
+  <div class="conainer-flex" style="margin-left: 10px;">
+      <div class="row">
+        <div class="col col-lg-6">
+
+
+          <div class="row row-cols-1 row-cols-md-2 g-4">
+                <div class="col-sm-12 col-lg-6" style="padding-top: 10px;" >
+                  <div class="card  h-100"  >
+                    <img src="../../assets/imagenes/card1.jpg">
+                    <div class="card-body">
+                      <h5 class="card-title">Almuerzo</h5>
+                      <p class="card-text">12.000.</p>
+                      <a href="#" class="btn btn-primary">Add</a>
+                    </div>
+                  </div>
+
+
+                </div>
+                <div class="col-sm-12 col-lg-6" style="padding-top: 10px;">
+                  <div class="card  h-100" (ngSubmit)="guardar()">
+                    <img src="../../assets/imagenes/card2.jpg"  class="card-img-top" >
+                    <div class="card-body">
+                      <h5 class="name">Papas</h5>
+                      <p class="precio">1000</p>
+                      <a (click)="guardar()" class="btn btn-primary">Add</a>
+                    </div>
+                  </div>
+                </div>
+
+
+                <div class="col-sm-12 col-lg-6" style="padding-top: 10px;">
+                  <div class="card  h-100" >
+                    <img src="../../assets/imagenes/card3.jpg" class="card-img-top" alt="...">
+                    <div class="card-body">
+                      <h5 class="card-title">Soda</h5>
+                      <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                      <a href="#" class="btn btn-primary">Add</a>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-sm-12 col-lg-6" style="padding-top: 10px;">
+                  <div class="card  h-100" >
+                    <img src="../../assets/imagenes/card4.jpg" class="card-img-top" alt="...">
+                    <div class="card-body">
+                      <h5 class="card-title">Jugo</h5>
+                      <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                      <a href="#" class="btn btn-primary">Add</a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+
+
+
+        </div>
+        <div class=" col" >
+          <h2>Cart</h2>
+          <div>
+
+           <li>{{guardar}}</li>
+
+          </div>
+        </div>
+      </div>
+
+  </div>
+
+</body>
