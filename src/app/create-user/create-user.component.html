@@ -1,0 +1,58 @@
+<body>
+   <br>
+    <h1>Partner</h1>
+    <hr>
+<form class="row g-3" #miFormulario>
+    <div class="col-md-4">
+      <label for="validationDefault01" class="form-label">First name</label>
+      <input #nombre type="text" class="form-control" id="validationDefault01" value="" required>
+    </div>
+
+    <div class="col-md-4">
+      <label for="validationDefault02" class="form-label">Last name</label>
+      <input #apellido type="text" class="form-control" id="validationDefault02" value="" required>
+    </div>
+
+    <div class="col-md-4">
+        <label for="validationDefault02" class="form-label">Identification</label>
+        <input #cedula type="number" class="form-control" id="validationDefault03" value="" required>
+      </div>
+      
+   
+    <div class="col-md-4">
+      <label for="validationDefault03" class="form-label">Investment</label>
+      <input type="number" class="form-control" id="validationDefault04" required>
+    </div>
+    
+    <div class="col-md-4">
+      <label for="validationDefault04" class="form-label">Partner</label>
+      <select #tipoMembresia class="form-select" id="validationDefault05" required>
+        <option selected disabled value="">Choose...</option>
+        <option>VIP</option>
+        <option>Regular</option>
+      </select>
+    </div>
+
+    <!-- <div class="col-md-4">
+      <label for="validationDefault05" class="form-label">Zip</label>
+      <input type="text" class="form-control" id="validationDefault06" required>
+    </div> -->
+
+    <div class="col-12">
+      <div class="form-check">
+        <input class="form-check-input" type="checkbox" value="" id="invalidCheck2" required>
+        <label class="form-check-label" for="invalidCheck2">
+          Agree to terms and conditions
+        </label>
+      </div>
+    </div>
+
+    <div class="col-12">
+      <button (click)="registrarSocio(nombre.value, apellido.value, cedula.value, tipoMembresia.value)" class="btn btn-primary"
+ 
+       >Submit form</button>
+    </div>
+
+  </form>
+
+</body>

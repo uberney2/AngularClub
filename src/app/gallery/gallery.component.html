@@ -1,0 +1,50 @@
+<body>
+    <h1>Gallery</h1>
+    <span class="line"></span>
+    <section class="galeria">
+
+    
+     <button (click)="showImages('../../assets/imagenes/1.png')" class=""><img src="../../assets/imagenes/1.png"></button>
+     <button (click)="showImages('../../assets/imagenes/2.png')" class=""><img src="../../assets/imagenes/2.png"></button>
+     <button (click)="showImages('../../assets/imagenes/3.png')" class=""><img src="../../assets/imagenes/3.png"></button>
+     <button (click)="showImages('../../assets/imagenes/4.png')" class=""><img src="../../assets/imagenes/4.png"></button>
+     <button (click)="showImages('../../assets/imagenes/5.png')" class=""><img src="../../assets/imagenes/5.png"></button>
+     <button (click)="showImages('../../assets/imagenes/6.png')" class=""><img src="../../assets/imagenes/6.png"></button>
+
+
+    </section>
+
+    <article *ngIf="showImage" class="light-box" id="image1"> 
+        <img [src]=routeImage alt="">      
+        <button (click)="hideImage()" class="close">X</button>
+        
+    </article>
+
+    <article *ngIf="showImage" class="light-box" id="image2">
+        <img [src]=routeImage alt="">
+        <button (click)="hideImage()" class="close">X</button>      
+    </article>
+
+    <article *ngIf="showImage" class="light-box" id="image3">
+        <img [src]=routeImage alt="">
+        <button (click)="hideImage()" class="close">X</button>       
+    </article>
+
+    <article *ngIf="showImage" class="light-box" id="image4"> 
+        <img [src]=routeImage alt="">
+        <button (click)="hideImage()" class="close">X</button>       
+    </article>
+
+    <article *ngIf="showImage" class="light-box" id="image5">
+        <img [src]=routeImage alt="">
+        <button (click)="hideImage()" class="close">X</button>
+        
+    </article>
+
+    <article *ngIf="showImage" class="light-box" id="image6">
+          <img [src]=routeImage alt="">
+          <button (click)="hideImage()" class="close">X</button>
+        
+    </article>
+
+</body>

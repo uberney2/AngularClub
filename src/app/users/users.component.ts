@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
+import { ClubService } from '../services/club.service';
+import { DataSharedService } from '../services/data-shared.service';
 
 @Component({
   selector: 'app-users',
@@ -7,9 +10,33 @@ import { Component, OnInit } from '@angular/core';
 })
 export class UsersComponent implements OnInit {
 
-  constructor() { }
+  user: any;
+  invoice: any = []
+ 
+
+  constructor(private _clubService : ClubService, private _sharedService : DataSharedService, private router : Router) { }
 
   ngOnInit(): void {
+  }
+
+  obtenerSocio(cedula : string){
+    this._clubService.getSocioById(parseInt(cedula)).subscribe(socio => {
+      this.user = socio;
+      this.invoice = this.user.facturas.filter(Boolean);
+      this._sharedService.setUser(this.user);
+      this.router.navigate(['/information']);
+      
+      
+      
+    });
+  }
+
+  setDataUser(){
+    return this._sharedService.sharedUSer = this.user;
+  }
+
+  setDataInvoice(){
+    return this._sharedService.sharedInvoice = this.invoice;
   }
 
 }

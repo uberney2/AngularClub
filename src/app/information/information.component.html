@@ -1,0 +1,90 @@
+<body>
+    <br>
+     <h2>Partner</h2>
+     <hr>
+ <form class="row g-3">
+     <div class="col-md-4">
+       <label for="validationDefault01" class="form-label">First name</label>
+       <input type="text" class="form-control" id="validationDefault01" value = {{userName}} readonly>
+     </div>
+ 
+     <div class="col-md-4">
+       <label for="validationDefault02" class="form-label">Last name</label>
+       <input type="text" class="form-control" id="validationDefault02" value = {{lastName}} readonly>
+     </div>
+ 
+     <div class="col-md-4">
+         <label for="validationDefault02" class="form-label">Identification</label>
+         <input type="number" class="form-control" id="validationDefault03" value="{{user.cedula}}" readonly>
+       </div>
+       
+     
+       <div class="col-md-4">
+        <label for="validationDefault02" class="form-label">Partner</label>
+        <input type="text" class="form-control" id="validationDefault02" value="{{user.tipoDeSuscripcion}}" readonly>
+     
+     </div>
+     <div class="col-md-12 ">
+        <button style="float: right; margin-right: -6px" type="button" (click)="goToInvoice()" class="btn btn-outline-success">Invoices</button>
+     </div>
+ </form>
+<br>
+<br>
+        <h3>Associated</h3>
+        <hr>
+        <form  class="row g-3">
+            <div class="col-md-4">
+                <label  class="name">First name</label>
+                <input #name type="text" 
+                class="form-control" id="validationDefault01" value="" required>
+              
+            </div>
+          
+              <div class="col-md-4">
+                <label  class="last name">Last name</label>
+                <input #lastName type="text" class="form-control" id="validationDefault02" value="" required>
+              </div>
+          
+              <div class="col-md-4">
+                  <label  class="identification">Identification</label>
+                  <input #identification type="number" class="form-control" id="validationDefault03" value="" required>
+              </div>
+                
+              <div class="col-12">
+                <button (click)="saveAuthUser(name.value, lastName.value, identification.value)" class="btn btn-outline-primary"
+                style="float: right">Save</button>
+              </div>
+          
+                
+        </form>
+        
+
+
+        <div class="row m-4"> 
+    
+            <table class="table" >        
+                <thead>
+                  <tr >
+                    <th scope="col">Name</th>
+                    <th scope="col">Id</th>      
+                    <th style="float: right" scope="col">Actions</th>                
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr *ngFor="let authPerson of autUsers" class="table-light">
+                    <td >{{authPerson.nombre}}</td>
+                    <td >{{authPerson.cedula}}</td>
+                    <td> <button style="float: right" type="button" class="btn btn-outline-danger" >Remove</button>
+                    <button style="float: right" type="button" class="btn btn-outline-success">Invoices</button></td>   
+                  </tr>
+                </tbody>
+                
+              </table>
+              
+
+            </div>
+
+
+
+ 
+ </body>
