@@ -4,7 +4,6 @@
 
 .font{
     font-family: 'Open Sans', sans-serif;
-    
 }
 
 .in-flex{
@@ -18,15 +17,15 @@ h2{
     font-weight: 300;
     color: rgba(112, 111, 111, 0.549);
     margin: -150px;
-    font-size: 50px;    
-} 
+    font-size: 50px;
+}
 
 
 
  .about_img{
-    text-align: center; 
+    text-align: center;
 
-} 
+}
 
 .about_picture{
     border-radius: 100%;
@@ -40,7 +39,7 @@ h2{
 *{
     padding: 0px;
     margin: 0px;
-   
+
 }
 
 .about{
@@ -52,5 +51,5 @@ h2{
     padding: 150px;
     text-align: center;
     margin-top: -60px;
-    
+
 }
