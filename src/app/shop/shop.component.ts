@@ -1,10 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-
-interface product{
-  name: string;
-  precio: number;
-}
-
+import { Product } from '../Models/Product';
+import { Shop } from '../Models/shop';
 
 @Component({
   selector: 'app-shop',
@@ -13,17 +9,31 @@ interface product{
 })
 export class ShopComponent implements OnInit {
 
-  constructor() { }
+  shop = new Shop();
+  total : number = 0;
+  selectedProducts : Product[] = [];
 
-  ngOnInit(): void {
+  constructor() { 
+    console.log(this.shop)
   }
-name: "papas"
-precio: "1000"
 
-  guardar(){
+    ngOnInit(): void {
+    }
 
-console.log("compra")
-  }
+
+    add(product : Product){
+      this.selectedProducts.push(product)
+      this.sum()
+  
+    }
+
+    sum(){
+      this.total = 0
+      for(let i = 0; i<=this.selectedProducts.length ; i++){
+        this.total = this.total + this.selectedProducts[i].price
+      }
+
+    }
 }
 
 
