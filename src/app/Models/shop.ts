@@ -8,10 +8,10 @@ export class Shop {
         img : "../../assets/imagenes/card1.jpg"
     },
     {
-        id : 2,
-        name : "Papas",
-        price : 1000,
-        img : "../../assets/imagenes/card2.jpg"
+      id : 4,
+      name : "Jugo",
+      price : 12000,
+      img : "../../assets/imagenes/card4.jpg"
     },
     {
         id : 3,
@@ -20,10 +20,11 @@ export class Shop {
         img : "../../assets/imagenes/card3.jpg"
     },
     {
-        id : 4,
-        name : "Jugo",
-        price : 12000,
-        img : "../../assets/imagenes/card4.jpg"
+        id : 2,
+        name : "Papas",
+        price : 1000,
+        img : "../../assets/imagenes/card2.jpg"
     }
     ];
 }
+

@@ -8,7 +8,7 @@ import {MenuItem} from 'primeng/api';
   selector: 'app-menu',
   templateUrl: './menu.component.html',
   styleUrls: ['./menu.component.css']
- 
+
 })
 export class MenuComponent implements OnInit {
 
@@ -22,10 +22,10 @@ export class MenuComponent implements OnInit {
             label:'Home',
             icon:'pi pi-fw pi-file',
             routerLink:'home'
-           
+
         },
-        
-           
+
+
         {
             label:'Users',
             icon:'pi pi-fw pi-user',
@@ -36,40 +36,24 @@ export class MenuComponent implements OnInit {
                     routerLink:'createUser'
 
                 },
-               
+
                 {
                     label:'Search',
                     icon:'pi pi-fw pi-eye',
                     routerLink:'users'
-                    
+
                 },
                 {
                     label:'Invoice',
                     icon:'pi pi-fw pi-dollar',
                     routerLink:'invoice'
-                    
+
                 },
 
             ]
         },
-        {
-            label:'Information',
-            icon:'pi pi-fw pi-calendar',
-            items:[
-                {
-                    label:'Location',
-                    icon:'pi pi-fw pi-globe',
-                    routerLink:'location'
-                },
-                { 
-                
-                    label:'Contact',
-                    icon:'pi pi-fw pi-phone',
-                   
-                }
-            ]
-        },
-       
+
+
     ];
-}    
+}
 }

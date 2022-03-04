@@ -13,7 +13,7 @@ export class ShopComponent implements OnInit {
   total : number = 0;
   selectedProducts : Product[] = [];
 
-  constructor() { 
+  constructor() {
     console.log(this.shop)
   }
 
@@ -23,16 +23,21 @@ export class ShopComponent implements OnInit {
 
     add(product : Product){
       this.selectedProducts.push(product)
-      this.sum()
-  
+      this.sumPrice()
+
     }
 
-    sum(){
+    sumPrice(){
       this.total = 0
       for(let i = 0; i<=this.selectedProducts.length ; i++){
         this.total = this.total + this.selectedProducts[i].price
       }
 
+    }
+
+    deleteProduct(product : Product){
+        this.selectedProducts = this.selectedProducts.filter((item) => item.id !== product.id);
+        this.sumPrice()
     }
 }
 

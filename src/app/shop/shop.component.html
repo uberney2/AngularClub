@@ -2,6 +2,8 @@
   <div class="container-flex">
     <div class="row">
       <div class="col">
+        <h4>Uber Zapata Patiño</h4>
+        <hr>
         <h1>Shopping</h1>
       </div>
     </div>
@@ -11,33 +13,70 @@
   <div class="conainer-flex" style="margin-left: 10px;">
       <div class="row">
         <div class="col col-lg-6">
-          <div class="row row-cols-1 row-cols-md-2 g-4">
-                <div *ngFor="let product of shop.Products" class="col-sm-12 col-lg-6" style="padding-top: 10px;" >
+
+          <div class="row row-cols-1 row-cols-md-3 g-3">
+                <div *ngFor="let product of shop.Products" class="col-sm-12 col-lg-4" style="padding-top: 10px;" >
                   <div class="card  h-100"  >
                     <img [src]="product.img">
                     <div class="card-body">
                       <h5 class="card-title">{{product.name}}</h5>
                       <p class="card-text">{{product.price}}</p>
-                      <button (click)="add(product)"  href="#" class="btn btn-primary">Add</button>
+
+
+                        <button (click)="add(product)"  href="#" class="btn btn-primary">Add</button>
+
+
                     </div>
                   </div>
-                </div>    
+                </div>
               </div>
         </div>
         <div class=" col" >
           <h2>Cart</h2>
-          <div>
-           <li *ngFor="let product of selectedProducts">
-             {{product.name}}   {{product.price}}
-            </li>
-            <hr>
-            <li>
-              Total: {{total}}
-            </li>
+
+          <div class="col-11" style="text-align: center">
+            <table class="table">
+              <thead>
+                <tr>
+
+                  <th scope="col">Productt</th>
+                  <th scope="col">Price</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr *ngFor="let product of selectedProducts">
+
+                  <td> {{product.name}}</td>
+                  <td>{{product.price}}</td>
+                  <button (click)="deleteProduct(product)" type="button" class="btn btn-outline-danger">Delete</button>
+
+
+                </tr>
+
+              </tbody>
+
+            </table>
+
+
+
+
+
           </div>
+          <div  class="container" >
+            <div  class="col-11" >
+
+              <div  class="d-grid gap-2 d-md-flex justify-content-md-center" id="total1" >
+                <button  class="btn btn-outline-success" *ngIf="total !=0" >
+                 Total: {{total}}
+                </button>
+              </div>
+            </div>
+
+          </div>
+          </div>
+
         </div>
       </div>
 
-  </div>
 
 </body>

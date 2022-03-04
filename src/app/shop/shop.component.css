@@ -1,6 +1,35 @@
 h1,h2{
   text-align: center;
-  padding-top:15px
+  padding-top:15px;
+  color:rgba(128, 128, 128, 0.57);
+
+}
+h4{
+
+padding-top:15px;
+color:rgba(128, 128, 128, 0.57);
+margin-left: 10px;
+
+}
+
+
+button #total1{
+
+    background:#12c7f0c2; /* fallback for old browsers */
+
+
+
+
+      display: block;
+      width: 138px;
+      height: 43px;
+      border: none;
+      color: #fff;
+      border-radius: 4px;
+      font-size: 16px;
+      margin: 10px auto;
+      cursor: pointer;
+
 }
 
 

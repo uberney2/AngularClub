@@ -4,26 +4,25 @@ form{
    margin-right:2%
 }
 
-body{ 
+body{
     background: #757F9A;  /* fallback for old browsers */
     background: -webkit-linear-gradient(to right, hsla(219, 27%, 88%, 0.604), hsla(224, 15%, 53%, 0.604));  /* Chrome 10-25, Safari 5.1-6 */
     background: linear-gradient(to right, hsla(219, 27%, 88%, 0.604), hsla(224, 15%, 53%, 0.604)); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
 
-   
+
 
 }
 h1{
     text-align: center;
     color:  rgba(43, 39, 39, 0.357);
-   
+
 }
 button{
-    background: #2980B9;  /* fallback for old browsers */
-    background: -webkit-linear-gradient(to right, #FFFFFF, #6DD5FA, #2980B9);  /* Chrome 10-25, Safari 5.1-6 */
-    background: linear-gradient(to right, #FFFFFF, #6DD5FA, #2980B9); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
-    
+  background:#12c7f0c2; /* fallback for old browsers */
 
-    
+
+
+
     display: block;
     width: 138px;
     height: 43px;

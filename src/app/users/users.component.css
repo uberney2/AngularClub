@@ -8,7 +8,7 @@
     box-sizing: border-box;
 }
 
-body{ 
+body{
     background: #757F9A;  /* fallback for old browsers */
     background: -webkit-linear-gradient(to right, hsla(219, 27%, 88%, 0.604), hsla(224, 15%, 53%, 0.604));  /* Chrome 10-25, Safari 5.1-6 */
     background: linear-gradient(to right, hsla(219, 27%, 88%, 0.604), hsla(224, 15%, 53%, 0.604)); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
@@ -21,14 +21,14 @@ body{
 
 }
 
-h1{ 
+h1{
     text-align: center;
     margin: 10px 0;
     font-weight: 800px;
     color: gray
 }
 
-form{ 
+form{
     background:#fff;
     width: 30%;
     padding: 10px 0;
@@ -58,7 +58,7 @@ input, textarea{
     border-color: var(--colorTextos);
    resize: none;
    height: 49px;
-    
+
 }
 
 input:focus, textarea:focus{
@@ -75,7 +75,7 @@ textarea:focus~label, textarea:valid~label{
     color:#2196F3;
 }
 
-label{ 
+label{
     color:  rgba(128, 128, 128, 0.357);
     font-size: 16px;
     position: absolute;
@@ -108,14 +108,14 @@ input:focus~.line::before, textarea:focus~.line::before{
 }
 
 button{
-    background: #2980B9;  /* fallback for old browsers */
-    background: -webkit-linear-gradient(to right, #FFFFFF, #6DD5FA, #2980B9);  /* Chrome 10-25, Safari 5.1-6 */
-    background: linear-gradient(to right, #FFFFFF, #6DD5FA, #2980B9); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
-    
-    
+  background:#12c7f0c2; /* fallback for old browsers */
+
+
+
+
     display: block;
-    width: 100px;
-    height: 40px;
+    width: 138px;
+    height: 43px;
     border: none;
     color: #fff;
     border-radius: 4px;
