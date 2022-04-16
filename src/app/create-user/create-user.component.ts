@@ -13,6 +13,8 @@ export class CreateUserComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  answer : string;
+
   registrarSocio(nombre : string, apellido : string, cedula : string, tipoMembresia : string){
     nombre = nombre +" " + apellido;
     if(tipoMembresia == "VIP"){
@@ -21,9 +23,9 @@ export class CreateUserComponent implements OnInit {
       tipoMembresia = "2";
     }
 
-    console.log(tipoMembresia);
     this._clubService.registrarSocio(nombre,  parseInt(cedula), parseInt(tipoMembresia)).subscribe(respuesta =>{
-      console.log(respuesta);
+      this.answer = respuesta
+      console.log(this.answer);
     });   
   }
 

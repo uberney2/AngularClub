@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { DataSharedService } from '../services/data-shared.service';
 import { ClubService } from '../services/club.service';
-import { last } from 'rxjs';
 import { Router } from '@angular/router';
 
 @Component({
@@ -17,11 +16,14 @@ export class InformationComponent implements OnInit {
   userName: string;
   lastName : string; 
   autUsers : any [] = [];
+  mensaje : string = "";
+  debt : string;
 
   constructor(private _sharedService : DataSharedService, private _clubService : ClubService, private router : Router ) { 
     this.user = this._sharedService.getUser();
     this.cutFullName(this.user.nombre);
     this.getAuthUsers()
+    console.log(this.user)
   }
 
   ngOnInit(): void {
@@ -54,6 +56,53 @@ export class InformationComponent implements OnInit {
   goToInvoice(){
     this._sharedService.setInvoice(this.user.facturas)
     this.router.navigate(['/invoice']);
+  }
+
+  goToInvoicePerson(){
+    this._sharedService.setInvoice(this.autUsers[0].facturas)
+    this._sharedService.setUser(this.autUsers[0]);
+    this._sharedService.setAuthUser (this.user);
+    this.router.navigate(['/invoice']);
+  }
+
+  goToShop(){
+    this.router.navigate(['/shop']);
+  }
+
+  goToPersonShop(){
+    this._sharedService.setAuthUser(this.autUsers);
+    this.router.navigate(['/shop']);
+  }
+
+  eliminarPersonaAutorizada(cedula : number){
+    this._clubService.eliminarPersonaAutorizada(this.user.cedula, cedula).subscribe(resp =>{
+      console.log(resp);
+      this.mensaje = resp;
+    })
+  }
+
+  eliminarSocio(){
+    this._clubService.eliminarSocio(this.user.cedula).subscribe(resp => {
+      console.log(resp)
+      this.mensaje = resp;
+    })
+    
+  }
+
+  addFounds(value : string){
+    console.log(value)
+    this._clubService.agregarFondos(this.user.cedula, parseInt(value, 10)).subscribe(resp => {
+      console.log(resp);
+      this.mensaje = resp;
+    })
+
+  }
+
+  showTotalDebt(){
+    this._clubService.verDeuda(this.user.cedula).subscribe(resp => {
+      this.debt = resp;
+    })
+
   }
 
   

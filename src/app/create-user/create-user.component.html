@@ -50,7 +50,11 @@
     <div class="col-12">
       <button (click)="registrarSocio(nombre.value, apellido.value, cedula.value, tipoMembresia.value)" class="btn btn-primary"
  
-       >Submit form</button>
+       >Registrar</button>
+    </div>
+
+    <div class="col-12" *ngIf="answer !=''">
+      <p>{{answer}}</p>
     </div>
 
   </form>

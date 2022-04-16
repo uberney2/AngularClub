@@ -14,5 +14,10 @@
 
             </div>
             <button (click)="obtenerSocio(cedula.value)"class="btn btn-primary">Search</button>
+            <div *ngIf="user == null">
+                <p>
+                    {{mensaje}}
+                </p>
+            </div>
     </form>
 </body>

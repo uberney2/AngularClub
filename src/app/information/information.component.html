@@ -20,13 +20,45 @@
        
      
        <div class="col-md-4">
-        <label for="validationDefault02" class="form-label">Partner</label>
-        <input type="text" class="form-control" id="validationDefault02" value="{{user.tipoDeSuscripcion}}" readonly>
+        <label for="validationDefault02" class="form-label">Funds</label>
+        <input type="text" class="form-control" id="validationDefault02" value="{{user.fondos | currency}}" readonly>
      
      </div>
+
+     <div class="col-md-4">
+      <label for="validationDefault02" class="form-label">Partner</label>
+      <input type="text" class="form-control" id="validationDefault02" value="{{user.tipoDeSuscripcion}}" readonly>
+   
+   </div>
      <div class="col-md-12 ">
         <button style="float: right; margin-right: -6px" type="button" (click)="goToInvoice()" class="btn btn-outline-success">Invoices</button>
+        <button style="float: right; margin-right: 10px" type="button" (click)="goToShop()" class="btn btn-outline-success">buy product</button>
+        <button style="float: right" type="button" class="btn btn-outline-danger" (click)="eliminarSocio()">Remove</button>
      </div>
+     <div class="row">
+      <div>
+        <div class="col">
+          <label for="validationDefault02" class="form-label">add founds</label>
+          <input #addFound type="text" class="form-control" id="validationDefault02">
+       </div>
+       <div class="col m-3">
+        <button style="float: right" type="button" class="btn btn-outline-danger" (click)="addFounds(addFound.value)">add founds</button>
+       </div>
+       </div>
+     </div>
+
+     <div class="row">
+      <div>
+        <div class="col">
+          <label for="validationDefault02" class="form-label">debt</label>
+          <input type="text" class="form-control" id="validationDefault02" value="{{debt | currency}}" readonly>
+       </div>
+       <div class="col m-3">
+        <button style="float: right" type="button" class="btn btn-outline-danger" (click)="showTotalDebt()">show debt</button>
+       </div>
+       </div>
+     </div>
+     
  </form>
 <br>
 <br>
@@ -74,12 +106,20 @@
                   <tr *ngFor="let authPerson of autUsers" class="table-light">
                     <td >{{authPerson.nombre}}</td>
                     <td >{{authPerson.cedula}}</td>
-                    <td> <button style="float: right" type="button" class="btn btn-outline-danger" >Remove</button>
-                    <button style="float: right" type="button" class="btn btn-outline-success">Invoices</button></td>   
+                    <td> <button style="float: right" type="button" class="btn btn-outline-danger" (click)="eliminarPersonaAutorizada(authPerson.cedula)">Remove</button>
+                    <button style="float: right" type="button" class="btn btn-outline-success" (click)="goToInvoicePerson()">Invoices</button>
+                    <button style="float: right; margin-right: 10px" type="button" (click)="goToPersonShop()" class="btn btn-outline-success">buy product</button></td> 
+                      
                   </tr>
                 </tbody>
                 
               </table>
+
+              <div *ngIf="mensaje != ''">
+                <p>
+                  {{mensaje}}
+                </p>
+              </div>
               
 
             </div>

@@ -12,6 +12,7 @@ export class UsersComponent implements OnInit {
 
   user: any;
   invoice: any = []
+  mensaje : string
  
 
   constructor(private _clubService : ClubService, private _sharedService : DataSharedService, private router : Router) { }
@@ -19,9 +20,15 @@ export class UsersComponent implements OnInit {
   ngOnInit(): void {
   }
 
+
   obtenerSocio(cedula : string){
     this._clubService.getSocioById(parseInt(cedula)).subscribe(socio => {
       this.user = socio;
+      if(this.user == null){
+        this.mensaje = "no se ha encontrado un socio con esta cedula";
+        return;
+
+      }
       this.invoice = this.user.facturas.filter(Boolean);
       this._sharedService.setUser(this.user);
       this.router.navigate(['/information']);

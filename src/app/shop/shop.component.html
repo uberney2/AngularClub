@@ -2,7 +2,7 @@
   <div class="container-flex">
     <div class="row">
       <div class="col">
-        <h4>Uber Zapata Patiño</h4>
+        <h4>{{user.nombre}}</h4>
         <hr>
         <h1>Shopping</h1>
       </div>
@@ -54,24 +54,23 @@
                 </tr>
 
               </tbody>
-
             </table>
-
-
-
-
-
           </div>
           <div  class="container" >
             <div  class="col-11" >
 
               <div  class="d-grid gap-2 d-md-flex justify-content-md-center" id="total1" >
-                <button  class="btn btn-outline-success" *ngIf="total !=0" >
+                <button (click) = "buy()"  class="btn btn-outline-success" *ngIf="total !=0" >
                  Total: {{total}}
                 </button>
               </div>
             </div>
 
+          </div>
+          <div *ngIf="mensaje != ''">
+            <p>
+              {{mensaje}}
+            </p>
           </div>
           </div>
 

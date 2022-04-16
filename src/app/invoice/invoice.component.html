@@ -8,7 +8,7 @@
         
             <thead>
               <tr >
-                <th scope="col">#</th>
+                <th scope="col"># factura</th>
                 <th scope="col">Concept</th>
                 <th scope="col">value</th>
                 
@@ -16,13 +16,19 @@
             </thead>
             <tbody>
               <tr *ngFor="let invoice of invoices" class="table-danger">
+                <td>{{invoice.numeroFactura}}</td>
                 <td>{{invoice.concepto}}</td>
                 <td>{{invoice.valor}}</td>
-                <td> <button style="float: right" type="button" class="btn btn-outline-success">Payment</button></td>
+                <td> <button style="float: right" type="button" (click)="payInvoice(invoice.numeroFactura, invoice.valor)" class="btn btn-outline-success">Payment</button></td>
               </tr>
         
             </tbody>
           </table>
+          <div *ngIf="mensaje != ''">
+            <p>
+              {{mensaje}}
+            </p>
+          </div>
         </div>
         
 
