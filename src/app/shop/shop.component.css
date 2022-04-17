@@ -32,4 +32,54 @@ button #total1{
 
 }
 
+section{
+  padding: 100px 0;
+}
+
+.menu{
+  font-family: 'Poppins', sans-serif;
+
+}
+
+
+
+
+
+.menu .menu-content {
+  display: flex;
+
+
+  justify-content: space-between;
+}
+
+.menu .menu-content .left{
+  width: 50%;
+  margin-left: 25px;
+
+}
+
+
+
+.menu .menu-content .right{
+  width: 50%;
+
+
+}
+
+.mat-dialog-container{
+  width: 500px;
+}
+
+
+
+
+
+
+
+
+
+@media (max-width:400px){
+
+}
+
 

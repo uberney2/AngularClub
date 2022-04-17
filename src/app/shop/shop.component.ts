@@ -4,6 +4,9 @@ import { Product } from '../Models/Product';
 import { Shop } from '../Models/shop';
 import { ClubService } from '../services/club.service';
 import { DataSharedService } from '../services/data-shared.service';
+import { MatDialog } from '@angular/material/dialog';
+
+import { AdditionsComponent } from '../additions/additions.component';
 
 @Component({
   selector: 'app-shop',
@@ -19,7 +22,7 @@ export class ShopComponent implements OnInit {
   mensaje : string = "";
   authPerson : any = null ;
 
-  constructor(private _sharedService : DataSharedService, private _clubService : ClubService) {
+  constructor(private _sharedService : DataSharedService, private _clubService : ClubService, private dialogRef : MatDialog) {
     this.user = this._sharedService.getUser();
     this.authPerson = this._sharedService.getAuthUser();
     console.log(this.user);
@@ -71,8 +74,17 @@ export class ShopComponent implements OnInit {
           })
         })
       }
-      
+
+
     }
+    openDialog(){
+
+      this.dialogRef.open(AdditionsComponent,{
+
+        width: '400px'
+      })
+
+      }
 }
 
 

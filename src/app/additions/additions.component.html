@@ -1,0 +1,57 @@
+<h1 style="text-align:center">Adiciones</h1>
+<br>
+<label style="font-weight:500; font-size:20px">Salsas</label><label style="margin-left: 20px; font-size: 10px;">(platos fuertes)</label>
+
+  <div class="field-checkbox">
+    <p-checkbox name="group1" value="Rosada" [(ngModel)]="selectedCities" inputId="ny"></p-checkbox>
+    <label style="margin-left: 15px;"for="ny">Rosada</label>
+  </div>
+  <div class="field-checkbox">
+    <p-checkbox name="group1" value="Piña" [(ngModel)]="selectedCities" inputId="sf"></p-checkbox>
+    <label style="margin-left: 15px;" for="sf">Piña</label>
+  </div>
+  <div class="field-checkbox">
+    <p-checkbox name="group1" value="BBQ" [(ngModel)]="selectedCities" inputId="la"></p-checkbox>
+    <label style="margin-left: 15px;" for="la">BBQ</label>
+  </div><br>
+
+<label style="font-weight:500; font-size:20px">Dulces</label><label style="margin-left: 20px; font-size: 10px;">(Postres)</label>
+
+  <div class="field-checkbox">
+    <p-checkbox name="group1" value="Mora" [(ngModel)]="selectedCities" inputId="la"></p-checkbox>
+    <label style="margin-left: 15px;" for="la">Mora</label>
+  </div>
+  <div class="field-checkbox">
+    <p-checkbox name="group1" value="Arequipe" [(ngModel)]="selectedCities" inputId="la"></p-checkbox>
+    <label style="margin-left: 15px;" for="la">Arequipe</label>
+  </div>
+<br>
+<label style="font-weight:500; font-size:20px">Bebidas</label><label style="margin-left: 20px; font-size: 10px;">(Calientes)</label>
+
+  <div class="field-checkbox">
+    <p-checkbox name="group1" value="Masmelos" [(ngModel)]="selectedCities" inputId="ny"></p-checkbox>
+    <label style="margin-left: 15px;"for="ny">Masmelos</label><label style="margin-left: 15px;">500</label>
+  </div>
+  <div class="field-checkbox">
+    <p-checkbox name="group1" value="San FCrema" [(ngModel)]="selectedCities" inputId="sf"></p-checkbox>
+    <label style="margin-left: 15px;" for="sf">Crema</label><label style="margin-left: 15px;">1000</label>
+  </div>
+  <br>
+
+
+
+  <label style="font-weight:500; font-size:20px">Salsas</label><label style="margin-left: 20px; font-size: 10px;">(platos vegetarianos)</label>
+
+  <div class="field-checkbox">
+    <p-checkbox name="group1" value="Carne de lentejas" [(ngModel)]="selectedCities" inputId="ny"></p-checkbox>
+    <label style="margin-left: 15px;"for="ny">Carne de lentejas</label><label style="margin-left: 15px;">3000</label>
+  </div>
+  <div class="field-checkbox">
+    <p-checkbox name="group1" value="Ensalada" [(ngModel)]="selectedCities" inputId="sf"></p-checkbox>
+    <label style="margin-left: 15px;" for="sf">Ensalada</label><label style="margin-left: 15px;">2500</label>
+  </div>
+<br>
+<div class="d-grid gap-2 d-md-flex justify-content-md-end">
+  <button (click)="closeDialog()"   class="btn btn-outline-primary" >Agregar</button>
+</div>
+
