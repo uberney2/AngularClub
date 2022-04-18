@@ -1,4 +1,4 @@
-import { Component, EventEmitter, OnInit, Output } from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
 import { Shop } from '../Models/shop';
 import { DataSharedService } from '../services/data-shared.service';
@@ -11,7 +11,8 @@ import { DataSharedService } from '../services/data-shared.service';
 export class AdditionsComponent implements OnInit {
 
   selectedSauces: any[] = [];
- 
+  showAddtions : boolean = true
+
 
   shop = new Shop();
 
@@ -24,11 +25,13 @@ export class AdditionsComponent implements OnInit {
   ngOnInit(): void {
   }
 
+
+
   closeDialog(){
+
     this.selectedSaucesEvent.emit(this.selectedSauces);
-    
+
   }
 
- 
 
 }

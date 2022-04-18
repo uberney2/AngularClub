@@ -22,7 +22,7 @@ export class ShopComponent implements OnInit {
   mensaje : string = "";
   authPerson : any = null ;
   selectedSauces : any [] = []
-  showAddtions : boolean = false;
+  showAddtions : boolean = false
 
   constructor(private _sharedService : DataSharedService, private _clubService : ClubService, private dialogRef : MatDialog) {
     this.user = this._sharedService.getUser();
@@ -40,7 +40,7 @@ export class ShopComponent implements OnInit {
       this.selectedProducts.forEach(product => {
         this.total = this.total + product.price
       })
-      
+
     }
 
     add(product : Product){
@@ -78,10 +78,21 @@ export class ShopComponent implements OnInit {
       }
     }
 
-    openDialog(product: any){   
+    openDialog(product: any){
+
       this.showAddtions = true;
       this.add(product);
+
+
+
     }
+
+
+
+
+
+
+
 
     receiveMessage($event) {
       this.selectedSauces = $event
@@ -90,7 +101,7 @@ export class ShopComponent implements OnInit {
         console.log(addition)
         this.add(addition);
       })
-      
+
     }
 }
 

@@ -1,0 +1,21 @@
+.menu .menu-content {
+  display: flex;
+
+
+  justify-content: space-between;
+}
+
+
+
+
+
+.menu .menu-content .right{
+  width: 60%;
+  margin-right:200px
+
+
+
+
+}
+
+

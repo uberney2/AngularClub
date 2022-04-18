@@ -2,9 +2,9 @@
   <div class="container-flex">
     <div class="row">
       <div class="col">
-        <h4>{{user.nombre}}</h4>
+        <!-- <h4>{{user.nombre}}</h4> -->
         <hr>
-        <h1>Shopping</h1>
+        <h1 style="font-weight:500;">Shopping</h1>
       </div>
     </div>
   </div>
@@ -32,6 +32,7 @@
                           <h2 class="card-title">{{product.name}}</h2>
                           <p class="card-text">{{product.price | currency}}</p>
                           <div class="d-grid gap-2 d-md-flex justify-content-md-end">
+
                             <button type="button" class="btn btn-outline-success" (click)="openDialog(product)">comprar</button>
                           </div>
                         </div>
@@ -150,17 +151,19 @@
     </p-accordion>
   </div>
 
+
+
   <div class="colum right">
-    <h1  style="text-align:center" >Total</h1>
+    <h1  style="text-align:start; font-size:30px;font-weight:500;" >Total</h1>
 
     <table class="table">
       <thead>
         <tr>
-
-          <th scope="col">Productt</th>
+          <th scope="col">Product</th>
           <th scope="col">Price</th>
         </tr>
       </thead>
+
       <tbody>
         <tr *ngFor="let product of selectedProducts">
 
@@ -170,28 +173,27 @@
 
 
         </tr>
+        <br>
+        <div  class="d-grid gap-2 d-md-flex justify-content-md-end" id="total1" >
+          <button (click) = "buy()"  class="btn btn-outline-success" *ngIf="total !=0" >
+           Total: {{total}}
+          </button>
+        </div>
+        <br>
 
       </tbody>
     </table>
-  </div>
-  <div  class="container" >
-    <div  class="col-11" >
-
-      <div  class="d-grid gap-2 d-md-flex justify-content-md-center" id="total1" >
-        <button (click) = "buy()"  class="btn btn-outline-success" *ngIf="total !=0" >
-         Total: {{total}}
-        </button>
-      </div>
-    </div>
+    <app-additions (selectedSaucesEvent) = "receiveMessage($event)" *ngIf="showAddtions"></app-additions>
 
   </div>
-</div>
 
 </div>
+</div>
+
+
 
 </section>
 
-<app-additions (selectedSaucesEvent) = "receiveMessage($event)" *ngIf="showAddtions"></app-additions>
 
 
 

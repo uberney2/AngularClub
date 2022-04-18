@@ -1,29 +1,40 @@
-<h1 style="text-align:center">Adiciones</h1>
-<br>
-<label style="font-weight:500; font-size:20px">Salsas</label><label style="margin-left: 20px; font-size: 10px;">(platos fuertes)</label>
+
+<section class="menu" id="menu">
+  <div class="max-width">
+
+      <div class="menu-content">
+        <div class="colum left"></div>
+          <div class="colum right" style="align-items:center; ">
+
+<div class="container">
+<p-accordion>
+<p-accordionTab style="font-size:20px; " header="Adiciones">
+
+<label style="font-weight:500; font-size:20px">Salsas</label><label style="margin-left: 20px; font-size: 13px; color: rgba(0, 0, 255, 0.811)">(platos fuertes)</label>
 
   <div *ngFor="let addition of shop.Additions;" class="field-checkbox">
     <p-checkbox *ngIf="addition.productType === 7" name="group1"  [value]= addition [(ngModel)]="selectedSauces" inputId="ny"></p-checkbox>
-    <label *ngIf="addition.productType === 7" style="margin-left: 15px;"for="ny">{{addition.name}}</label>
+    <label *ngIf="addition.productType === 7" style="margin-left: 15px;font-size:15px"for="ny">{{addition.name}}</label>
   </div>
   <br>
 
-<label style="font-weight:500; font-size:20px">Dulces</label><label style="margin-left: 20px; font-size: 10px;">(Postres)</label>
+<label style="font-weight:500; font-size:20px">Dulces</label><label style="margin-left:20px; font-size: 13px; color: rgba(0, 0, 255, 0.811)">(Postres)</label>
 
   <div *ngFor="let addition of shop.Additions" class="field-checkbox">
     <p-checkbox *ngIf="addition.productType === 8" name="group1" [value]= addition [(ngModel)]="selectedSauces" inputId="la"></p-checkbox>
-    <label *ngIf="addition.productType === 8" style="margin-left: 15px;" for="la">{{addition.name}}</label>
+    <label *ngIf="addition.productType === 8" style="margin-left: 15px;font-size:15px" for="la">{{addition.name}}</label>
   </div>
 <br>
-<label style="font-weight:500; font-size:20px">Bebidas</label><label style="margin-left: 20px; font-size: 10px;">(Calientes)</label>
+<label style="font-weight:500; font-size:20px">Bebidas</label><label style="margin-left: 20px; font-size: 13px; color: rgba(0, 0, 255, 0.811)">(Calientes)</label>
 
   <div *ngFor="let addition of shop.Additions" class="field-checkbox">
     <p-checkbox *ngIf="addition.productType === 9" name="group1" [value]= addition [(ngModel)]="selectedSauces" inputId="ny"></p-checkbox>
-    <label *ngIf="addition.productType === 9" style="margin-left: 15px;"for="ny">{{addition.name}}</label>
-    <label *ngIf="addition.productType === 9" style="margin-left: 15px;">{{addition.price}}</label>
+    <label *ngIf="addition.productType === 9" style="margin-left: 15px;font-size:15px"for="ny">{{addition.name}}</label>
+    <label *ngIf="addition.productType === 9" style="margin-left: 15px;font-size:15px">{{addition.price | currency}}</label>
   </div>
-  
-  <label style="font-weight:500; font-size:20px">Adiciones</label><label style="margin-left: 20px; font-size: 10px;">(platos vegetarianos)</label>
+  <br>
+
+  <label style="font-weight:500; font-size:20px">Adiciones</label><label style="margin-left: 20px; font-size: 13px; color: rgba(0, 0, 255, 0.811)">(platos vegetarianos)</label>
 
   <div *ngFor="let addition of shop.Additions" class="field-checkbox">
     <p-checkbox *ngIf="addition.productType === 10" name="group1" [value]= addition [(ngModel)]="selectedSauces" inputId="ny"></p-checkbox>
@@ -34,4 +45,12 @@
 <div class="d-grid gap-2 d-md-flex justify-content-md-end">
   <button (click)="closeDialog()"   class="btn btn-outline-primary" >Agregar</button>
 </div>
+</p-accordionTab>
+</p-accordion>
+</div>
+</div>
+</div>
+</div>
+</section>
+
 
