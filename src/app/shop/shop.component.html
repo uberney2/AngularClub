@@ -2,7 +2,7 @@
   <div class="container-flex">
     <div class="row">
       <div class="col">
-        <!-- <h4>{{user.nombre}}</h4> -->
+        <h4>{{user.nombre}}</h4>
         <hr>
         <h1>Shopping</h1>
       </div>
@@ -22,49 +22,25 @@
 
         <p-accordion [multiple]="true">
           <p-accordionTab header="Postres">
-
               <div class="container">
                 <div class="row row-cols-1 row-cols-md-2 g-4">
-                  <div class="col">
-                    <div class="card h-100">
-                      <img src="https://www.hogarmania.com/archivos/201903/postres-chocolate-668x400x80xX.jpg" class="card-img-top" alt="...">
-                      <div class="card-body">
-                        <h2 class="card-title">Chocolate</h2>
-                        <p class="card-text">$25000</p>
-                        <div class="d-grid gap-2 d-md-flex justify-content-md-end">
-                          <button type="button" class="btn btn-outline-success" (click)="openDialog()">comprar</button>
-                        </div>
-                      </div>
-
-                    </div>
-                  </div>
-                  <div class="col">
-                    <div class="card h-100">
-                      <img src="https://saboryestilo.com.mx/wp-content/uploads/2020/12/Pastel-Zanahoria.jpg" class="card-img-top" alt="...">
-                      <div class="card-body">
-                        <h2 class="card-title">Zanahoria</h2>
-                        <p class="card-text">$25000</p>
-                        <div class="d-grid gap-2 d-md-flex justify-content-md-end">
-                          <button type="button" class="btn btn-outline-success" (click)="openDialog()">comprar</button>
+                  <ng-container *ngFor="let product of shop.Products">
+                    <div *ngIf="product.productType  === 1"  class="col">
+                      <div class="card h-100">
+                        <img [src]=product.img class="card-img-top" alt="...">
+                        <div class="card-body">
+                          <h2 class="card-title">{{product.name}}</h2>
+                          <p class="card-text">{{product.price | currency}}</p>
+                          <div class="d-grid gap-2 d-md-flex justify-content-md-end">
+                            <button type="button" class="btn btn-outline-success" (click)="openDialog(product)">comprar</button>
+                          </div>
                         </div>
                       </div>
                     </div>
-                  </div>
-
+                 </ng-container>
                 </div>
               </div>
-
-
-
-
-
-
-
-
-
           </p-accordionTab>
-
-
       </p-accordion>
 
         <p-accordion [multiple]="true">
@@ -72,180 +48,150 @@
             <p-accordionTab header="Mixto">
               <div class="container">
                 <div class="row row-cols-1 row-cols-md-2 g-4">
-                  <div class="col">
-                    <div class="card h-100">
-                      <img src="https://cafamfloresta.com.co/wp-content/uploads/2021/04/SALOMITO-DE-CERDO.gif" class="card-img-top" alt="...">
-                      <div class="card-body">
-                        <h2 class="card-title">Solomo</h2>
-                        <p class="card-text">$25000</p>
-                        <div class="d-grid gap-2 d-md-flex justify-content-md-end">
-                          <button type="button" class="btn btn-outline-success" (click)="openDialog()">comprar</button>
-                        </div>
-                      </div>
-
-                    </div>
-                  </div>
-                  <div class="col">
-                    <div class="card h-100">
-                      <img src="https://cdn.colombia.com/gastronomia/2011/08/02/bandeja-paisa-1616.gif" class="card-img-top" alt="...">
-                      <div class="card-body">
-                        <h2 class="card-title">Bandeja</h2>
-                        <p class="card-text">$25000</p>
-                        <div class="d-grid gap-2 d-md-flex justify-content-md-end">
-                          <button type="button" class="btn btn-outline-success" (click)="openDialog()">comprar</button>
+                  <ng-container *ngFor="let product of shop.Products">
+                    <div *ngIf="product.productType  === 2"  class="col">
+                      <div class="card h-100">
+                        <img [src]=product.img class="card-img-top" alt="...">
+                        <div class="card-body">
+                          <h2 class="card-title">{{product.name}}</h2>
+                          <p class="card-text">{{product.price | currency}}</p>
+                          <div class="d-grid gap-2 d-md-flex justify-content-md-end">
+                            <button type="button" class="btn btn-outline-success" (click)="openDialog(product)">comprar</button>
+                          </div>
                         </div>
                       </div>
                     </div>
-                  </div>
-
+                 </ng-container>
                 </div>
               </div>
-
-
-
-
-
-
-
-
-
           </p-accordionTab>
           <p-accordionTab header="Vegetariano">
             <div class="container">
               <div class="row row-cols-1 row-cols-md-2 g-4">
-                <div class="col">
-                  <div class="card h-100">
-                    <img src="https://cdn.cienradios.com/wp-content/uploads/sites/12/2018/09/hamburguesas-ricas.jpg" class="card-img-top" alt="...">
-                    <div class="card-body">
-                      <h2 class="card-title">hamburguesa</h2>
-                      <p class="card-text">$25000</p>
-                      <div class="d-grid gap-2 d-md-flex justify-content-md-end">
-                        <button type="button" class="btn btn-outline-success" (click)="openDialog()">comprar</button>
-                      </div>
-
-                    </div>
-
-                  </div>
-                </div>
-                <div class="col">
-                  <div class="card h-100">
-                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR3_pa4zlqRpXcXd6SMPwjJK0FC5D8AMA42XbhR1MIdv_4S6D1cO9MtI-G8HOzT54PRSzs&usqp=CAU" class="card-img-top" alt="...">
-                    <div class="card-body">
-                      <h2 class="card-title">Lasagna</h2>
-                      <p class="card-text">$25000</p>
-                      <div class="d-grid gap-2 d-md-flex justify-content-md-end">
-                        <button type="button" class="btn btn-outline-success" (click)="openDialog()">comprar</button>
+                <ng-container *ngFor="let product of shop.Products">
+                  <div *ngIf="product.productType  === 3"  class="col">
+                    <div class="card h-100">
+                      <img [src]=product.img class="card-img-top" alt="...">
+                      <div class="card-body">
+                        <h2 class="card-title">{{product.name}}</h2>
+                        <p class="card-text">{{product.price | currency}}</p>
+                        <div class="d-grid gap-2 d-md-flex justify-content-md-end">
+                          <button type="button" class="btn btn-outline-success" (click)="openDialog(product)">comprar</button>
+                        </div>
                       </div>
                     </div>
                   </div>
-                </div>
-
+               </ng-container>
               </div>
             </div>
-
             </p-accordionTab>
           </p-accordionTab>
           </p-accordion>
-
-
         <p-accordion [multiple]="true">
           <p-accordionTab header="Bebidas">
             <p-accordionTab header="Frias">
               <div class="container">
                 <div class="row row-cols-1 row-cols-md-2 g-4">
-                  <div class="col">
-                    <div class="card h-100">
-                      <img src="https://lirp.cdn-website.com/b4fb73a9/dms3rep/multi/opt/29256887321_51b21baab4_z-640x464-640w.jpg" class="card-img-top" alt="...">
-                      <div class="card-body">
-                        <h2 class="card-title">Jugo</h2>
-                        <p class="card-text">$25000</p>
-                        <div class="d-grid gap-2 d-md-flex justify-content-md-end">
-                          <button type="button" class="btn btn-outline-success">comprar</button>
-                        </div>
-                      </div>
-
-                    </div>
-                  </div>
-                  <div class="col">
-                    <div class="card h-100">
-                      <img src="https://estaticos.miarevista.es/media/cache/1000x590_thumb/uploads/images/article/611fc0d65cafe835f70d66ac/cervezas.jpeg" class="card-img-top" alt="...">
-                      <div class="card-body">
-                        <h2 class="card-title">Cerveza</h2>
-                        <p class="card-text">$25000</p>
-                        <div class="d-grid gap-2 d-md-flex justify-content-md-end">
-                          <button type="button" class="btn btn-outline-success">comprar</button>
+                  <ng-container *ngFor="let product of shop.Products">
+                    <div *ngIf="product.productType  === 4"  class="col">
+                      <div class="card h-100">
+                        <img [src]=product.img class="card-img-top" alt="...">
+                        <div class="card-body">
+                          <h2 class="card-title">{{product.name}}</h2>
+                          <p class="card-text">{{product.price | currency}}</p>
+                          <div class="d-grid gap-2 d-md-flex justify-content-md-end">
+                            <button type="button" class="btn btn-outline-success" (click)="add(product)">comprar</button>
+                          </div>
                         </div>
                       </div>
                     </div>
+                 </ng-container>
+                 <ng-container *ngFor="let product of shop.Products">
+                  <div *ngIf="product.productType  === 5"  class="col">
+                    <div class="card h-100">
+                      <img [src]=product.img class="card-img-top" alt="...">
+                      <div class="card-body">
+                        <h2 class="card-title">{{product.name}}</h2>
+                        <p class="card-text">{{product.price | currency}}</p>
+                        <div class="d-grid gap-2 d-md-flex justify-content-md-end">
+                          <button type="button" class="btn btn-outline-success" (click)="add(product)">comprar</button>
+                        </div>
+                      </div>
+                    </div>
                   </div>
-
-                </div>
+               </ng-container>
               </div>
-
-
-
-
-
-
-
-
-
+            </div>
           </p-accordionTab>
           <p-accordionTab header="Calientes">
             <div class="container">
               <div class="row row-cols-1 row-cols-md-2 g-4">
-                <div class="col">
-                  <div class="card h-100">
-                    <img src="https://statics-cuidateplus.marca.com/cms/images/cafe-salud.jpg" class="card-img-top" alt="...">
-                    <div class="card-body">
-                      <h2 class="card-title">Cafe</h2>
-                      <p class="card-text">$25000</p>
-                      <div class="d-grid gap-2 d-md-flex justify-content-md-end">
-                        <button type="button" class="btn btn-outline-success" (click)="openDialog()">comprar</button>
-                      </div>
-
-                    </div>
-
-                  </div>
-                </div>
-                <div class="col">
-                  <div class="card h-100">
-                    <img src="https://i.pinimg.com/474x/c6/6e/24/c66e243a7a440d3e0f1e90d10336dccc.jpg" class="card-img-top" alt="...">
-                    <div class="card-body">
-                      <h2 class="card-title">Milo</h2>
-                      <p class="card-text">$25000</p>
-                      <div class="d-grid gap-2 d-md-flex justify-content-md-end">
-                        <button type="button" class="btn btn-outline-success" (click)="openDialog()">comprar</button>
+                <ng-container *ngFor="let product of shop.Products">
+                  <div *ngIf="product.productType  === 6"  class="col">
+                    <div class="card h-100">
+                      <img [src]=product.img class="card-img-top" alt="...">
+                      <div class="card-body">
+                        <h2 class="card-title">{{product.name}}</h2>
+                        <p class="card-text">{{product.price | currency}}</p>
+                        <div class="d-grid gap-2 d-md-flex justify-content-md-end">
+                          <button type="button" class="btn btn-outline-success" (click)="openDialog(product)">comprar</button>
+                        </div>
                       </div>
                     </div>
                   </div>
-                </div>
-
+               </ng-container>
               </div>
             </div>
             </p-accordionTab>
-
-
-
-
-
           </p-accordionTab>
         </p-accordion>
 
-
-
-
       </p-accordionTab>
-
     </p-accordion>
   </div>
 
-  <div class="colum right"><h1  style="text-align:center" >Total</h1></div>
+  <div class="colum right">
+    <h1  style="text-align:center" >Total</h1>
+
+    <table class="table">
+      <thead>
+        <tr>
+
+          <th scope="col">Productt</th>
+          <th scope="col">Price</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let product of selectedProducts">
+
+          <td>{{product.name}}</td>
+          <td>{{product.price | currency}}</td>
+          <button (click)="deleteProduct(product)" type="button" class="btn btn-outline-danger">Delete</button>
+
+
+        </tr>
+
+      </tbody>
+    </table>
+  </div>
+  <div  class="container" >
+    <div  class="col-11" >
+
+      <div  class="d-grid gap-2 d-md-flex justify-content-md-center" id="total1" >
+        <button (click) = "buy()"  class="btn btn-outline-success" *ngIf="total !=0" >
+         Total: {{total}}
+        </button>
+      </div>
+    </div>
+
+  </div>
 </div>
 
 </div>
 
 </section>
+
+<app-additions (selectedSaucesEvent) = "receiveMessage($event)" *ngIf="showAddtions"></app-additions>
 
 
 

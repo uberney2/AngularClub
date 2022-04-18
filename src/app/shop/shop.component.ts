@@ -21,6 +21,8 @@ export class ShopComponent implements OnInit {
   user: any ;
   mensaje : string = "";
   authPerson : any = null ;
+  selectedSauces : any [] = []
+  showAddtions : boolean = false;
 
   constructor(private _sharedService : DataSharedService, private _clubService : ClubService, private dialogRef : MatDialog) {
     this.user = this._sharedService.getUser();
@@ -32,19 +34,19 @@ export class ShopComponent implements OnInit {
     ngOnInit(): void {
     }
 
+    sumPrice(){
+      this.total = 0
+
+      this.selectedProducts.forEach(product => {
+        this.total = this.total + product.price
+      })
+      
+    }
 
     add(product : Product){
       this.selectedProducts.push(product)
       this.sumPrice()
       this.mensaje= "";
-
-    }
-
-    sumPrice(){
-      this.total = 0
-      for(let i = 0; i<=this.selectedProducts.length ; i++){
-        this.total = this.total + this.selectedProducts[i].price
-      }
 
     }
 
@@ -74,17 +76,22 @@ export class ShopComponent implements OnInit {
           })
         })
       }
-
-
     }
-    openDialog(){
 
-      this.dialogRef.open(AdditionsComponent,{
+    openDialog(product: any){   
+      this.showAddtions = true;
+      this.add(product);
+    }
 
-        width: '400px'
+    receiveMessage($event) {
+      this.selectedSauces = $event
+      console.log("soy el padre", this.selectedSauces)
+      this.selectedSauces.forEach(addition => {
+        console.log(addition)
+        this.add(addition);
       })
-
-      }
+      
+    }
 }
 
 

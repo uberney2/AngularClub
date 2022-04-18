@@ -8,6 +8,7 @@ export class DataSharedService {
   sharedUSer : any;
   sharedInvoice : any [] = []
   sharedAuthService : any[]= []
+  sharedSelectedAdditions : any[] = []
 
   constructor() { 
     console.log(this.sharedUSer)
@@ -18,12 +19,20 @@ export class DataSharedService {
 
   }
 
+  setAdditions(additions){
+    this.sharedSelectedAdditions = additions;
+  }
+
   setInvoice(Invoices){
     this.sharedInvoice = Invoices;
   }
 
   getUser(){
     return this.sharedUSer
+  }
+
+  getAdditions(){
+    return this.sharedSelectedAdditions;
   }
 
   getInvoice(){

@@ -1,9 +1,8 @@
-export class Product {
+export class Additions {
     productType : number;
+    id : number;
     name : string;
-    img : string;
     price : number;
-    id : number
     constructor() {
         
     }

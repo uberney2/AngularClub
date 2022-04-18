@@ -1,5 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, EventEmitter, OnInit, Output } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
+import { Shop } from '../Models/shop';
+import { DataSharedService } from '../services/data-shared.service';
 
 @Component({
   selector: 'app-additions',
@@ -8,15 +10,25 @@ import { MatDialog } from '@angular/material/dialog';
 })
 export class AdditionsComponent implements OnInit {
 
-  selectedCities: string[] = [];
+  selectedSauces: any[] = [];
+ 
 
-  constructor(private dialogRef : MatDialog) { }
+  shop = new Shop();
+
+  @Output() selectedSaucesEvent = new EventEmitter<any>()
+
+  constructor(private dialogRef : MatDialog, private _sharedService : DataSharedService) {
+
+   }
 
   ngOnInit(): void {
   }
-  closeDialog(){
 
-    this.dialogRef.closeAll()
-    }
+  closeDialog(){
+    this.selectedSaucesEvent.emit(this.selectedSauces);
+    
+  }
+
+ 
 
 }
