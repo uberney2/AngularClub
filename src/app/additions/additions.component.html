@@ -26,7 +26,7 @@
   <label style="font-weight:500; font-size:20px">Adiciones</label><label style="margin-left: 20px; font-size: 10px;">(platos vegetarianos)</label>
 
   <div *ngFor="let addition of shop.Additions" class="field-checkbox">
-    <p-checkbox *ngIf="addition.productType === 10" name="group1" value="Carne de lentejas" [(ngModel)]="selectedSauces" inputId="ny"></p-checkbox>
+    <p-checkbox *ngIf="addition.productType === 10" name="group1" [value]= addition [(ngModel)]="selectedSauces" inputId="ny"></p-checkbox>
     <label *ngIf="addition.productType === 10" style="margin-left: 15px;"for="ny">{{addition.name}}</label>
     <label *ngIf="addition.productType === 10" style="margin-left: 15px;">{{addition.price}}</label>
   </div>
