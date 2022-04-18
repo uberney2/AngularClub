@@ -61,15 +61,24 @@ section{
 
 
 .menu .menu-content .right{
-  width: 50%;
+  width: 40%;
+
 
 
 }
+
+.menu .menu-content .right .table{
+  width: 80%;
+  text-align: center;
+
+
+}
+
+
 
 .mat-dialog-container{
   width: 500px;
 }
-
 
 
 
